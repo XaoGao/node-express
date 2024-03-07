@@ -8,22 +8,23 @@ module.exports = {
 
     output: {
         filename: "[name].js",
-        path: path.resolve(__dirname, "public")
+        path: path.resolve(__dirname, "public"),
+        clean: true
     },
 
     devtool: "source-map",
 
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                exclude: [
-                    /node_modules/
-                ],
-                use: [
-                    { loader: "babel-loader" }
-                ]
-            }
-        ]
-    }
+    // module: {
+    //     rules: [
+    //         {
+    //             test: /\.js$/,
+    //             exclude: [
+    //                 /node_modules/
+    //             ],
+    //             use: [
+    //                 { loader: "babel-loader" }
+    //             ]
+    //         }
+    //     ]
+    // }
 }

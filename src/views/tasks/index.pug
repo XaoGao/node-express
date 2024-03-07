@@ -1,0 +1,15 @@
+extends ../layout
+
+block layout-content
+    table.table
+        thead
+            tr
+                th(scope='col') #
+                th(scope='col') title
+                th(scope='col') complited
+        tbody
+            each task, index in tasks
+                tr
+                    th(scope='row')= index
+                    td= task.title
+                    td= task.complited

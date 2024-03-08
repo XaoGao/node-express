@@ -16,4 +16,13 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.post('/', async (req, res) => {
+    try {
+    }
+    catch(e) {
+        console.log(e)
+        res.status(500).json({ message: 'Server error' })
+    }
+})
+
 module.exports = router

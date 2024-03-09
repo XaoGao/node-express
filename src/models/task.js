@@ -5,7 +5,7 @@ const Task = new Schema({
         type: String,
         require: true
     },
-    comlited: {
+    complited: {
         type: Boolean,
         default: false
     }

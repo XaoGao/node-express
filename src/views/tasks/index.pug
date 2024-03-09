@@ -1,6 +1,12 @@
 extends ../layout
+include taskRow
+include form
 
 block layout-content
+    +form()
+
+    hr
+
     table.table
         thead
             tr
@@ -9,7 +15,4 @@ block layout-content
                 th(scope='col') complited
         tbody
             each task, index in tasks
-                tr
-                    th(scope='row')= index
-                    td= task.title
-                    td= task.complited
+                +taskRow(index + 1, task)

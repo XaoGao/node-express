@@ -7,11 +7,21 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="theme-color", content="#000000")
     script(src="bundle.js")
-    title #{title} | WHATABYTE
+    title TODO
   body
-    div(data-controller='hello')
-      input(data-target="hello.name" type='text')
-      button(data-action='click->hello#greet') Greet
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-5
+      div.container
+        a.navbar-brand(href='#') Navbar
+        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='#')
+                | Home 
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='#') Link
 
     div#root.container
       block layout-content

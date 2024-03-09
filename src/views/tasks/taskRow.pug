@@ -1,0 +1,6 @@
+mixin taskRow(index, task)
+    tr
+        th(scope='row')= index
+        td= task.title
+        td 
+            input.form-check-input(type='checkbox' checked=task.complited)

@@ -1,0 +1,4 @@
+mixin form()
+    div.input-group(data-controller='hello')
+      input.form-control(data-hello-target="name" type='text')
+      button.btn.btn-primary(data-action='click->hello#greet') Create

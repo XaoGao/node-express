@@ -1,6 +1,10 @@
 mixin taskRow(index, task)
     tr
         th(scope='row')= index
-        td= task.title
+        td
+            if task.complited
+                s= task.title
+            else
+                = task.title
         td 
             input.form-check-input(type='checkbox' checked=task.complited)

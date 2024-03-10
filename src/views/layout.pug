@@ -7,11 +7,12 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="theme-color", content="#000000")
     script(src="bundle.js")
+    base(href='http://localhost:3000/' target='_blank')
     title TODO
   body
     nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-5
       div.container
-        a.navbar-brand(href='#') Navbar
+        a.navbar-brand(href='#') Todo
         button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
@@ -19,9 +20,6 @@ html
             li.nav-item.active
               a.nav-link(href='#')
                 | Home 
-                span.sr-only (current)
-            li.nav-item
-              a.nav-link(href='#') Link
 
     div#root.container
       block layout-content

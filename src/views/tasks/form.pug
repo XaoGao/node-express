@@ -1,4 +1,4 @@
 mixin form()
-    div.input-group(data-controller='hello')
-      input.form-control(data-hello-target="name" type='text')
-      button.btn.btn-primary(data-action='click->hello#greet') Create
+    div.input-group(data-controller='tasks')
+      input.form-control(data-tasks-target="title" type='text')
+      button.btn.btn-primary(data-action='click->tasks#create') Create

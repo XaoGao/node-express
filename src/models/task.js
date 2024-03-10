@@ -8,6 +8,16 @@ const Task = new Schema({
     complited: {
         type: Boolean,
         default: false
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        require: true
+    },
+    updatedAt: {
+        type: Date,
+        default: Date.now,
+        require: true
     }
 })
 

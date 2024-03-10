@@ -1,5 +1,6 @@
 const path = require('path')
 const Task = require("../../models/task")
+const logger = require('../../utils/logger')
 
 async function indexTasks(req, res) {
     try {
@@ -9,7 +10,7 @@ async function indexTasks(req, res) {
         })
     }
     catch (e) {
-        console.log(e)
+        logger.error(e)
         res.status(500).json({ message: 'Server error' })
     }
 }

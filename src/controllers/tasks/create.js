@@ -1,6 +1,7 @@
 const path = require('path')
 const Task = require("../../models/task")
 const { validationResult } = require('express-validator')
+const logger = require('../../utils/logger')
 
 async function createTask(req, res) {
     try {
@@ -17,7 +18,7 @@ async function createTask(req, res) {
         })
     }
     catch (e) {
-        console.log(e)
+        logger.error(e)
         res.status(500).json({ message: 'Server error' })
     }
 }

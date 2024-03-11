@@ -1,5 +1,5 @@
 mixin taskRow(index, task)
-    tr
+    tr(id=task._id)
         th(scope='row')= index
         td
             if task.complited

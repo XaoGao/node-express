@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js",
+    "dev": "set DEBUG=express:* & node src/index.js",
+    "dev:watch": "nodemon src/index.js",
     "build": "webpack",
     "start": "webpack serve"
   },

@@ -7,19 +7,21 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="theme-color", content="#000000")
     script(src="bundle.js")
-    base(href='http://localhost:3000/' target='_blank')
+    base(href='http://localhost:3000/')
     title TODO
   body
     nav.navbar.navbar-expand-lg.navbar-light.bg-light.mb-5
-      div.container
-        a.navbar-brand(href='#') Todo
-        button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+      .container
+        a.navbar-brand(href='/tasks') Todo
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
           span.navbar-toggler-icon
         #navbarSupportedContent.collapse.navbar-collapse
-          ul.navbar-nav.mr-auto
-            li.nav-item.active
-              a.nav-link(href='#')
-                | Home 
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              a.nav-link.active(aria-current='page' href='#') Home
+          .d-flex
+            a.btn.btn-outline-primary(href='/login') Sign In
+            a.btn.btn-outline-success(href='/registration') Sign Up
 
     div#root.container
       block layout-content

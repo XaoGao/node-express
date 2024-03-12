@@ -10,6 +10,11 @@ router.get('/login', newLogin)
 router.post('/login', createLogin)
 
 router.get('/registration', newRegistration)
-router.post('/registration', createRegistration)
+router.post('/registration',
+    [
+        check('email', 'Email is required').notEmpty(),
+        check('email', 'Email is not valid').isEmail(),
+        check('password', 'Password is required').notEmpty()
+    ], createRegistration)
 
 module.exports = router

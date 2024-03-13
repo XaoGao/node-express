@@ -5,6 +5,9 @@ export default class extends Controller {
     static values = {
         id: String
     }
+    static targets = [
+        "title"
+    ]
 
     create() {
         axios.post(
@@ -26,6 +29,20 @@ export default class extends Controller {
             this.element.remove()
         }).catch(error => {
             console.error(error.response.data)
+        })
+    }
+
+    toggleComplit() {
+        axios.put(
+            `/tasks/${this.idValue}`, {}
+        ).then(response => {
+            if (response.data.complited) {
+                this.titleTarget.classList.add("text-decoration-line-through")
+            } else {
+                this.titleTarget.classList.remove("text-decoration-line-through")
+            }
+        }).catch(errer => {
+            console.error(error)
         })
     }
 

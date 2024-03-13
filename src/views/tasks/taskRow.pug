@@ -1,12 +1,8 @@
 mixin taskRow(index, task)
     tr(data-controller='tasks' data-tasks-id-value=task._id)
         th(scope='row')= index
-        td
-            if task.complited
-                s= task.title
-            else
-                = task.title
+        td(data-tasks-target='title' class=task.complited ? 'text-decoration-line-through' : '')= task.title
         td 
-            input.form-check-input(type='checkbox' checked=task.complited)
+            input.form-check-input(type='checkbox' checked=task.complited data-action='click->tasks#toggleComplit')
         td
             button.btn.btn-danger(data-action='click->tasks#delete') Del

@@ -23,5 +23,4 @@ app.use(exceptionHandlerMiddleware)
 app.use('/tasks', tasksRoute)
 app.use('/', sessionsRoute)
 
-
 module.exports = app

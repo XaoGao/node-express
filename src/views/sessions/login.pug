@@ -1,4 +1,17 @@
 extends ../layout.pug
 
 block layout-content
-    h2 Login 
+    h1 Login
+    hr
+    .card
+        .card-body
+            form(action='/login' method='POST')
+                .form-group.mb-3
+                    label(for='userEmail') Email
+                    input#userEmail.form-control(type='email' name='email' aria-describedby='emailHelp' placeholder='Enter email')
+                .form-group
+                    label(for='userPassword') Password
+                    input#userPassword.form-control(type='password' name='password' placeholder='Password')
+                hr
+                .text-end
+                    button.btn.btn-primary(type='submit') Submit

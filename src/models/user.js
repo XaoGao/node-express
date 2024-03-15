@@ -22,4 +22,8 @@ const User = new Schema({
     }
 })
 
+User.methods.validPassword = function(password) {
+    return this.password === password
+}
+
 module.exports = model('user', User)

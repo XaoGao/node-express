@@ -19,10 +19,17 @@ html
         #navbarSupportedContent.collapse.navbar-collapse
           ul.navbar-nav.me-auto.mb-2.mb-lg-0
             li.nav-item
-              a.nav-link.active(aria-current='page' href='#') Home
+              a.nav-link.active(aria-current='page' href='#') home
           .d-flex
-            a.btn.btn-outline-primary(href='/login') Sign In
-            a.btn.btn-outline-success(href='/registration') Sign Up
+            if currentUser.signedIn 
+              .dropdown
+                button.btn.btn-secondary.dropdown-toggle(type='button' data-bs-toggle='dropdown' aria-expanded='false')= currentUser.email
+                ul.dropdown-menu
+                  li(data-controller='sessions')
+                    button.dropdown-item(data-action='click->sessions#delete') Logout
+            else
+              a.btn.btn-outline-primary(href='/login') Sign In
+              a.btn.btn-outline-success(href='/registration') Sign Up
 
     div#root.container
       block layout-content

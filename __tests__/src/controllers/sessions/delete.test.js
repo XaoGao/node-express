@@ -26,7 +26,6 @@ describe('DELETE /logout', () => {
             .set('Cookie', 'session_id=123')
 
         expect(response.statusCode).toBe(200)
-        // TODO: check cookie
-        // expect(response.cookies).toBe({})
+        expect(response.headers['set-cookie']).toContain('user_email=; Path=/')
     })
 })

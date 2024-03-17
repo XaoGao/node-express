@@ -10,12 +10,17 @@ async function createRegistration(req, res) {
         })
     }
 
-    const { email, password } = req.body
-    const user = new User({ email: email, password: password })
-    await user.save()
+    const user = await User.findOne({ email: req.body.email })
+    if (user) {
+        return res.status(400).send('User already exists')
+    }
 
-    res.cookie('user_id', user._id)
-    res.cookie('user_email', user.email)
+    const { email, password } = req.body
+    const newUser = new User({ email: email, password: password })
+    await newUser.save()
+
+    res.cookie('user_id', newUser._id)
+    res.cookie('user_email', newUser.email)
 
     res.redirect('/tasks')
 }

@@ -1,9 +1,9 @@
 const request = require('supertest')
 const { MongoMemoryServer } = require('mongodb-memory-server')
 const mongoose = require('mongoose')
-const app = require('../../../../src/server')
-const { createLogin } = require('../../../../src/controllers/sessions/login/create')
-const User = require('../../../../src/models/user')
+const app = require('../../../../../src/server')
+const { createLogin } = require('../../../../../src/controllers/sessions/login/create')
+const User = require('../../../../../src/models/user')
 
 describe('POST /login', () => {
     beforeAll(async () => {
